@@ -1,16 +1,23 @@
-# This is a sample Python script.
+import random
+my_list = int(input('Введите искомое число X: '))
+my_dict = []
+new_list = 0
+new = -1
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+for i in range(20):
+     my_dict.append(random.randint(1,101))
+     min_d = max(my_dict) - my_list
+
+     if int(my_dict[i]) == my_list:
+         new_list += 1
+
+for i in set(my_dict):
+     if abs(i - my_list) < min_d:
+         min_d = abs(i - my_list)
+         new = i
+print(f'Встречется {new_list} раз ')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+print(f'Максимально близкое число: {new}')
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(f'Список: {my_dict}')
